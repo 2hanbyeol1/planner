@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="css/index.css" rel="stylesheet">
+<title>Study Planner</title>
+</head>
+<body style="width: 100%; height: 99vh;">
+	<header class="planner-header">
+		<div class="planner-header-items">
+			<span class="left-items">
+				<img class="planner-clock" src="media/alarm-clock.png">
+				<time class="planner-time">00:00</time>
+			</span>
+			<span class="center-items">
+				<time class="planner-today"><b>[1/1 (월)]</b></time>
+			</span>
+			<span class="right-items">
+				<img class="planner-calendar" src="media/calendar.png">
+				<input class="planner-date" type="date">
+			</span>
+		</div>
+	</header>
+	<section class="planner-section" style="width: 100%; height: 80vh;">
+		<aside>
+			<table class="planner-timetable" border="1">
+					<tbody>
+						<tr> <td id="hour">0시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">1시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">2시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">3시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">4시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">5시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">6시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">7시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">8시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">9시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">10시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">11시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">12시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">13시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">14시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">15시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">16시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">17시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">18시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">19시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">20시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">21시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">22시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+						<tr> <td id="hour">23시</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					</tbody>
+				</table>
+			</aside>
+		<article style="width: 100%; height: 100%;">
+			<form class="planner-form">
+				<table class="planner-table" border="1">
+					<thead>
+						<tr>
+							<th colspan="2">공부 내용</th>
+							<th>v</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="none visible">
+							<td colspan="3">공부 내용이 없습니다.</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td><input class="subject_input" type="text" name="subject" placeholder="과목"></td>
+							<td><input class="content_input" type="text" name="content" placeholder="내용"></td>
+							<td><input class="submit_button" type="submit" value="submit"></td>
+						</tr>
+					</tfoot>
+				</table>
+			</form>
+		</article>
+	</section>
+<script src="js/table.js"></script>
+<script src="js/clock.js"></script>
+</body>
+</html>
