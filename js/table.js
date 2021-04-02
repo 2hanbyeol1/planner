@@ -14,6 +14,20 @@ function invisibleNone(){
 	none.classList.remove(VISIBLE_CLASSNAME);
 }
 
+function checkBoxChange(event){
+	const checkBox = event.target;
+	const td = checkBox.parentNode;
+	const tr = td.parentNode;
+	const isChecked = checkBox.checked;
+	//저장
+	for(var i = 0; i < table.length; i++){
+		if(table[i].id === parseInt(tr.id)){
+			table[i].isChecked = isChecked;
+		};
+	}
+	saveTable();
+}
+
 function addRow(subjectValue, contentValue, isChecked){
 	invisibleNone();
 	const tr = document.createElement("tr");
@@ -24,13 +38,17 @@ function addRow(subjectValue, contentValue, isChecked){
 	const check = document.createElement("td");
 	const checkBox = document.createElement("input");
 	checkBox.setAttribute("type", "checkbox");
+	checkBox.addEventListener("change", checkBoxChange);
 	checkBox.checked = isChecked;
 	plannerTBody.appendChild(tr);
 	tr.appendChild(subject);
 	tr.appendChild(content);
 	tr.appendChild(check);
 	check.appendChild(checkBox);
+	const id = table.length + 1;
+	tr.id = id;
 	const newRow = {
+			id: id,
 			subjectValue: subjectValue,
 			contentValue: contentValue,
 			isChecked: isChecked
