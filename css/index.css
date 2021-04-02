@@ -84,6 +84,7 @@ body{
 
 .planner-table tbody tr:hover{
 	background-color: #e7eef1;
+	cursor: pointer;
 }
 
 .none{
