@@ -10,8 +10,32 @@ const TABLE_LOCALSTORAGE = "TABLE",
 
 let table = [];
 
+function visibleNone(){
+	none.classList.add(VISIBLE_CLASSNAME);
+}
+
 function invisibleNone(){
 	none.classList.remove(VISIBLE_CLASSNAME);
+}
+
+function deleteRow(event){
+	const del = confirm("삭제하시겠습니까?");
+	if(del == true){
+		const td = event.target;
+		const tr = td.parentNode;
+		const tbody = tr.parentNode;
+		tbody.removeChild(tr);
+		//저장
+		const newTable = table.filter(function(table){
+			return table.id !== parseInt(tr.id);
+		});
+		table = newTable;
+		saveTable();
+		//nothing to do
+		if(table.length === 0){
+			visibleNone();
+		}
+	}
 }
 
 function checkBoxChange(event){
@@ -38,13 +62,14 @@ function addRow(subjectValue, contentValue, isChecked){
 	const check = document.createElement("td");
 	const checkBox = document.createElement("input");
 	checkBox.setAttribute("type", "checkbox");
-	checkBox.addEventListener("change", checkBoxChange);
 	checkBox.checked = isChecked;
 	plannerTBody.appendChild(tr);
 	tr.appendChild(subject);
 	tr.appendChild(content);
 	tr.appendChild(check);
+	tr.addEventListener("click", deleteRow);
 	check.appendChild(checkBox);
+	checkBox.addEventListener("change", checkBoxChange);
 	const id = table.length + 1;
 	tr.id = id;
 	const newRow = {
