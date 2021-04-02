@@ -82,6 +82,10 @@ body{
 	overflow: scroll;
 }
 
+.planner-table tbody tr:hover{
+	background-color: #e7eef1;
+}
+
 .none{
 	display: none;
 }
